@@ -5,5 +5,5 @@ import com.lvbby.user.entity.UserDetailEntity;
  * Created by lipeng on 2016-08-03 .
  */
 public interface UserDetailMapper {
-	long add(UserDetailEntity entity);
+	void add(UserDetailEntity entity);
 }

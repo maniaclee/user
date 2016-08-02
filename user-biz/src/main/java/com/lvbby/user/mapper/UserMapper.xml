@@ -16,34 +16,33 @@
         <result column="update_time" property="updateTime"/>
     </resultMap>
 
-    <insert id="add"  useGeneratedKeys="true" keyProperty="id">
-
+    <insert id="add" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO user
         (
-        name,
-        sex,
-        email,
-        phone,
-        level,
-        image_url,
-        role,
-        enabled,
-        password,
-        add_time,
-        update_time
+         	name,
+         	sex,
+         	email,
+         	phone,
+         	level,
+         	image_url,
+         	role,
+         	enabled,
+         	password,
+         	add_time,
+         	update_time
         )
         values(
-        #{name},
-        #{sex},
-        #{email},
-        #{phone},
-        #{level},
-        #{imageUrl},
-        #{role},
-        #{enabled},
-        #{password},
-        #{addTime},
-        #{updateTime}
+            #{name},
+            #{sex},
+            #{email},
+            #{phone},
+            #{level},
+            #{imageUrl},
+            #{role},
+            #{enabled},
+            #{password},
+            #{addTime},
+            #{updateTime}
         )
     </insert>
 </mapper>

@@ -17,8 +17,10 @@ public class UserRepository {
     @Resource
     private UserMapper userMapper;
 
-	long add(UserDTO entity){
-		return userMapper.add(convert(entity));
+	public long add(UserDTO entity){
+		UserEntity res = convert(entity);
+		userMapper.add(res);
+		return res.getId();
 	}
 
 	public static UserDTO convert(UserEntity src) {

@@ -1,11 +1,10 @@
 package com.lvbby.user.repo;
 
-import com.lvbby.user.dao.UserDetailMapper;
-import com.lvbby.user.dto.UserDetailDTO;
-import com.lvbby.user.entity.UserDetailEntity;
-import org.springframework.stereotype.Component;
-
 import javax.annotation.Resource;
+import org.springframework.stereotype.Component;
+import com.lvbby.user.entity.UserDetailEntity;
+import com.lvbby.user.dto.UserDetailDTO;
+import com.lvbby.user.dao.UserDetailMapper;
 
 
 
@@ -18,8 +17,10 @@ public class UserDetailRepository {
     @Resource
     private UserDetailMapper userDetailMapper;
 
-	long add(UserDetailDTO entity){
-		return userDetailMapper.add(convert(entity));
+	public long add(UserDetailDTO entity){
+		UserDetailEntity res = convert(entity);
+		userDetailMapper.add(res);
+		return res.getId();
 	}
 
 	public static UserDetailDTO convert(UserDetailEntity src) {

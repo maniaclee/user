@@ -1,7 +1,9 @@
 package com.lvbby.user.test;
 
 import com.lvbby.user.dao.UserMapper;
+import com.lvbby.user.dto.UserDTO;
 import com.lvbby.user.entity.UserEntity;
+import com.lvbby.user.repo.UserRepository;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,6 +17,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.Iterator;
 
 /**
@@ -30,6 +33,8 @@ public class MybatisTest {
 
     @Resource
     private UserMapper userMapper;
+    @Resource
+    private UserRepository userRepository;
 
     @Test
     public void test() {
@@ -39,7 +44,11 @@ public class MybatisTest {
 
     @Test
     public void insert() {
-        print(userMapper.add(new UserEntity()));
+        UserDTO entity = new UserDTO();
+        entity.setName("ris112");
+        entity.setAddTime(new Date());
+        print(entity.getId());
+        print(userRepository.add(entity));
     }
 
 

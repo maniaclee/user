@@ -7,9 +7,6 @@
     </resultMap>
 
     <insert id="add" useGeneratedKeys="true" keyProperty="id">
-        <selectKey resultType="long" keyProperty="id" order="AFTER" >
-          SELECT LAST_INSERT_ID() AS id
-        </selectKey>
         INSERT INTO user_detail
         (
          	user_id
