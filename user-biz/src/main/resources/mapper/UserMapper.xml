@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lvbby.user.dao.UserMapper">
+    <resultMap id="resultMap" type="com.lvbby.user.entity.UserEntity">
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="sex" property="sex"/>
+        <result column="email" property="email"/>
+        <result column="phone" property="phone"/>
+        <result column="level" property="level"/>
+        <result column="image_url" property="imageUrl"/>
+        <result column="role" property="role"/>
+        <result column="enabled" property="enabled"/>
+        <result column="password" property="password"/>
+        <result column="add_time" property="addTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        <selectKey resultType="long" keyProperty="id" order="AFTER" >
+          SELECT LAST_INSERT_ID() AS id
+        </selectKey>
+        INSERT INTO user
+        (
+         	name,
+         	sex,
+         	email,
+         	phone,
+         	level,
+         	image_url,
+         	role,
+         	enabled,
+         	password,
+         	add_time,
+         	update_time
+        )
+        values(
+            #{name},
+            #{sex},
+            #{email},
+            #{phone},
+            #{level},
+            #{imageUrl},
+            #{role},
+            #{enabled},
+            #{password},
+            #{addTime},
+            #{updateTime}
+        )
+    </insert>
+</mapper>
