@@ -1,10 +1,11 @@
 package com.lvbby.user.repo;
 
-import javax.annotation.Resource;
-import org.springframework.stereotype.Component;
-import com.lvbby.user.entity.UserDetailEntity;
-import com.lvbby.user.dto.UserDetailDTO;
+import com.lvbby.user.api.dto.UserDetailDTO;
 import com.lvbby.user.dao.UserDetailMapper;
+import com.lvbby.user.entity.UserDetailEntity;
+import org.springframework.stereotype.Component;
+
+import javax.annotation.Resource;
 
 
 

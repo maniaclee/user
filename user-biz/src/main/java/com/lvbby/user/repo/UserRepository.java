@@ -3,7 +3,7 @@ package com.lvbby.user.repo;
 import javax.annotation.Resource;
 import org.springframework.stereotype.Component;
 import com.lvbby.user.entity.UserEntity;
-import com.lvbby.user.dto.UserDTO;
+import com.lvbby.user.api.dto.UserDTO;
 import com.lvbby.user.dao.UserMapper;
 
 

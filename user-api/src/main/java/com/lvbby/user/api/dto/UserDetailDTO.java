@@ -1,4 +1,4 @@
-package com.lvbby.user.dto;
+package com.lvbby.user.api.dto;
 
 import java.io.Serializable;
 import java.util.Date;

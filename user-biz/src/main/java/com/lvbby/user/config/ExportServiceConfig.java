@@ -5,7 +5,7 @@
 package com.lvbby.user.config;
 
 import com.alibaba.dubbo.config.spring.ServiceBean;
-import com.lvbby.user.service.UserService;
+import com.lvbby.user.api.service.UserService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

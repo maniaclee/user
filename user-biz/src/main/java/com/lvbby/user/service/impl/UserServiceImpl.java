@@ -1,8 +1,8 @@
 package com.lvbby.user.service.impl;
 
-import com.lvbby.user.dto.UserDTO;
+import com.lvbby.user.api.dto.UserDTO;
+import com.lvbby.user.api.service.UserService;
 import com.lvbby.user.repo.UserRepository;
-import com.lvbby.user.service.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

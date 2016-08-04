@@ -1,7 +1,7 @@
 package com.lvbby.user.test;
 
 import com.lvbby.user.dao.UserMapper;
-import com.lvbby.user.dto.UserDTO;
+import com.lvbby.user.api.dto.UserDTO;
 import com.lvbby.user.repo.UserRepository;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.junit.Test;
@@ -21,11 +21,11 @@ import java.util.Iterator;
  * Created by peng on 16/2/2.
  */
 @SpringBootApplication
-@ComponentScan("com.lvbby.user")
 @RunWith(SpringJUnit4ClassRunner.class)
 @EnableAspectJAutoProxy
 @ContextConfiguration(classes = {MybatisTest.class})
 @ImportResource("provider.xml")
+@ComponentScan("com.lvbby.user")
 public class MybatisTest {
 
     @Resource
