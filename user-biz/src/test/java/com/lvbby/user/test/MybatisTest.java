@@ -2,17 +2,14 @@ package com.lvbby.user.test;
 
 import com.lvbby.user.dao.UserMapper;
 import com.lvbby.user.dto.UserDTO;
-import com.lvbby.user.entity.UserEntity;
 import com.lvbby.user.repo.UserRepository;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -26,9 +23,9 @@ import java.util.Iterator;
 @SpringBootApplication
 @ComponentScan("com.lvbby.user")
 @RunWith(SpringJUnit4ClassRunner.class)
-@EnableAutoConfiguration(exclude = {DataSourceTransactionManagerAutoConfiguration.class, DataSourceAutoConfiguration.class})
 @EnableAspectJAutoProxy
 @ContextConfiguration(classes = {MybatisTest.class})
+@ImportResource("provider.xml")
 public class MybatisTest {
 
     @Resource
@@ -50,7 +47,6 @@ public class MybatisTest {
         print(entity.getId());
         print(userRepository.add(entity));
     }
-
 
 
     private void print(Object p) {
