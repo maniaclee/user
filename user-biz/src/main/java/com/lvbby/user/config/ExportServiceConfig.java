@@ -19,7 +19,7 @@ public class ExportServiceConfig {
         return createService(userService);
     }
 
-    public ServiceBean createService(Object service, Class clz) {
+    public static ServiceBean createService(Object service, Class clz) {
         ServiceBean serviceBean = new ServiceBean();
         serviceBean.setProxy("javassist");
         serviceBean.setVersion("0.1");
@@ -30,7 +30,7 @@ public class ExportServiceConfig {
         return serviceBean;
     }
 
-    public ServiceBean createService(Object service) {
+    public static ServiceBean createService(Object service) {
         Class<?>[] interfaces = service.getClass().getInterfaces();
         if (interfaces.length != 1)
             throw new RuntimeException(String.format("service [%s] has multi interfaces , please config dubbo service specifically", service.getClass().getSimpleName()));
