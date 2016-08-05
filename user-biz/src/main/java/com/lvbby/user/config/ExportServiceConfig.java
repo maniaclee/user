@@ -15,14 +15,14 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ExportServiceConfig {
     @Bean
-    public ServiceBean userService(UserService userService) {
-        return createService(userService);
+    public ServiceBean userServiceExport(UserService userService) {
+        return createService(userService,UserService.class);
     }
 
     public static ServiceBean createService(Object service, Class clz) {
         ServiceBean serviceBean = new ServiceBean();
         serviceBean.setProxy("javassist");
-        serviceBean.setVersion("0.1");
+//        serviceBean.setVersion("0.1");
         serviceBean.setInterface(clz);
         serviceBean.setRef(service);
         serviceBean.setTimeout(5000);

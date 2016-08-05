@@ -1,10 +1,12 @@
 package com.lvbby.user;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ImportResource;
-import org.springframework.scheduling.annotation.EnableScheduling;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -13,7 +15,6 @@ import java.util.Date;
  * Created by lipeng on 16/8/4.
  */
 @SpringBootApplication
-@EnableScheduling
 @ComponentScan
 @ImportResource("provider.xml")
 public class Application {

@@ -42,8 +42,8 @@
         #{role},
         #{enabled},
         #{password},
-        #{addTime},
-        #{updateTime}
+        NOW(),
+        NOW()
         )
     </insert>
 </mapper>
