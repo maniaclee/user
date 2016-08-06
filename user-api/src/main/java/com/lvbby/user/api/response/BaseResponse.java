@@ -20,7 +20,7 @@ public class BaseResponse implements Serializable {
     private static <T extends BaseResponse> T create(Class<T> clz, boolean success) {
         try {
             T t = clz.newInstance();
-            t.success = success;
+            t.setSuccess(success);
             return t;
         } catch (Exception e) {
             throw new RuntimeException(e);

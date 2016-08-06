@@ -4,7 +4,8 @@ package com.lvbby.user.api.response;
  * Created by lipeng on 16/8/6.
  */
 public class UserRegisterResponse extends BaseResponse {
-    private UserRegisterCode userRegisterCode;
+    private UserRegisterCode resultCode;
+    private long userId;
 
     public enum UserRegisterCode {
         user_registered(1000, "user registered"),
@@ -41,11 +42,19 @@ public class UserRegisterResponse extends BaseResponse {
         }
     }
 
-    public UserRegisterCode getUserRegisterCode() {
-        return userRegisterCode;
+    public UserRegisterCode getResultCode() {
+        return resultCode;
     }
 
-    public void setUserRegisterCode(UserRegisterCode userRegisterCode) {
-        this.userRegisterCode = userRegisterCode;
+    public void setResultCode(UserRegisterCode resultCode) {
+        this.resultCode = resultCode;
+    }
+
+    public long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 }

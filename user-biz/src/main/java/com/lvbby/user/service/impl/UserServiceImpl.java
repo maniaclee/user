@@ -23,13 +23,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserRegisterResponse add(UserRegisterRequest userRegisterRequest) {
 
-        if (userRegisterRequest != null && userRegisterRequest.getUserDTO() != null || StringUtils.isBlank(userRegisterRequest.getUserDTO().getName()))
+        if (userRegisterRequest == null || userRegisterRequest.getUserDTO() == null || StringUtils.isBlank(userRegisterRequest.getUserDTO().getName()))
             return fail(UserRegisterResponse.UserRegisterCode.param_error, userRegisterRequest);
         UserDTO userDTO = userRegisterRequest.getUserDTO();
         userDTO.setName(userDTO.getName().trim());
         try {
-            userRepository.add(userDTO);
-            return BaseResponse.success(UserRegisterResponse.class);
+            long userId = userRepository.add(userDTO);
+            UserRegisterResponse success = BaseResponse.success(UserRegisterResponse.class);
+            success.setUserId(userId);
+            return success;
         } catch (Exception e) {
             return fail(UserRegisterResponse.UserRegisterCode.user_registered, userRegisterRequest);
         }
@@ -38,7 +40,7 @@ public class UserServiceImpl implements UserService {
 
     private UserRegisterResponse fail(UserRegisterResponse.UserRegisterCode userRegisterCode, UserRegisterRequest userRegisterRequest) {
         UserRegisterResponse fail = BaseResponse.fail(UserRegisterResponse.class);
-        fail.setUserRegisterCode(userRegisterCode);
+        fail.setResultCode(userRegisterCode);
         return fail;
     }
 
