@@ -37,6 +37,17 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+    public UserDTO loadById(long id) {
+        return userRepository.loadById(id);
+    }
+
+    public UserDTO loadByName(String name) {
+        return userRepository.loadByName(name);
+    }
+
+    public UserDTO loadByNameAndPassord(String name, String password) {
+        return userRepository.loadByNameAndPassord(name, password);
+    }
 
     private UserRegisterResponse fail(UserRegisterResponse.UserRegisterCode userRegisterCode, UserRegisterRequest userRegisterRequest) {
         UserRegisterResponse fail = BaseResponse.fail(UserRegisterResponse.class);
