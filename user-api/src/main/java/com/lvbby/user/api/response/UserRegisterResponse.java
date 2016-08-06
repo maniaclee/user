@@ -7,7 +7,6 @@ public class UserRegisterResponse extends BaseResponse {
     private UserRegisterCode userRegisterCode;
 
     public enum UserRegisterCode {
-        success(0, "success"),
         user_registered(1000, "user registered"),
         param_error(4000, "parameter error");
         int code;
