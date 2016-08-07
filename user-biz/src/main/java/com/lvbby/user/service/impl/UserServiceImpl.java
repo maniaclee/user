@@ -37,16 +37,19 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+    @Override
     public UserDTO loadById(long id) {
         return userRepository.loadById(id);
     }
 
+    @Override
     public UserDTO loadByName(String name) {
         return userRepository.loadByName(name);
     }
 
-    public UserDTO loadByNameAndPassord(String name, String password) {
-        return userRepository.loadByNameAndPassord(name, password);
+    @Override
+    public UserDTO loadByNameAndPassword(String name, String password) {
+        return userRepository.loadByNameAndPassword(name, password);
     }
 
     private UserRegisterResponse fail(UserRegisterResponse.UserRegisterCode userRegisterCode, UserRegisterRequest userRegisterRequest) {

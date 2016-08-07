@@ -1,6 +1,7 @@
 package com.lvbby.user.dao;
 
 import com.lvbby.user.entity.UserEntity;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 /**
@@ -17,5 +18,5 @@ public interface UserMapper {
     UserEntity loadByName(String name);
 
     @Select("select * from user where name = #{name} and password=#{password}")
-    UserEntity loadByNameAndPassord(String name, String password);
+    UserEntity loadByNameAndPassword(@Param("name") String name, @Param("password")String password);
 }

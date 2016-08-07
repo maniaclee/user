@@ -31,8 +31,8 @@ public class UserRepository {
         return convert(userMapper.loadByName(name));
     }
 
-    public UserDTO loadByNameAndPassord(String name, String password) {
-        return convert(userMapper.loadByNameAndPassord(name, password));
+    public UserDTO loadByNameAndPassword(String name, String password) {
+        return convert(userMapper.loadByNameAndPassword(name, password));
     }
 
     public static UserDTO convert(UserEntity src) {
