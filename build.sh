@@ -15,4 +15,4 @@ if [ pid ] ;then
  	kill -9 ${pid}
 	echo 		"============= 	stop service ${jar} =========="
 fi
-java -jar $jarPath &
+java -jar $jarPath
