@@ -4,7 +4,7 @@
 project="user-biz"
 dir="$project/target/"
 jar=`ls ${dir} | grep '.*\.jar$'`
-if [ ! ${jar}];then
+if [ ! ${jar} ];then
 	echo " no runnable jar was found in ${dir}"
 	exit -1
 fi
