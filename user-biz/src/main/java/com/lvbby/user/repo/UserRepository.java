@@ -36,6 +36,7 @@ public class UserRepository {
     }
 
     public static UserDTO convert(UserEntity src) {
+        if(src==null) return null;
         UserDTO re = new UserDTO();
         re.setId(src.getId());
         re.setName(src.getName());
@@ -53,6 +54,7 @@ public class UserRepository {
     }
 
     public static UserEntity convert(UserDTO src) {
+        if(src==null) return null;
         UserEntity re = new UserEntity();
         re.setId(src.getId());
         re.setName(src.getName());
